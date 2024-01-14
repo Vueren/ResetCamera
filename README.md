@@ -4,6 +4,10 @@ This plugin will reset the Camera to a saved position relative to the world, and
 
 This is useful for activities where you want your camera to be synced up with the EXACT same coordinates across all clients at the press of a button. Namely, multiboxing.
 
+## Install
+
+Add `https://raw.githubusercontent.com/Vueren/ResetCamera/main/repo.json` to your list. Enjoy.
+
 ## How To Use
 
 ### Saving the Camera Position
