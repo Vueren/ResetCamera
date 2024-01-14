@@ -1,31 +1,24 @@
 [
     {
-      "Author": "Vueren Kuraenir",
-      "Name": "Reset Camera",
-      "Punchline": "Reset the camera position relative to the world!",
-      "Description": "This plugin will reset the Camera to a saved position relative to the world, and NOT relative to the character. /rcsave /rcreset",
-      "Tags": [
-          "camera",
-          "direction",
-          "utility",
-          "plugin",
-          "position"
-      ],
-      "CategoryTags": null,
-      "IsHide": false,
-      "Changelog": null,
-      "ApplicableVersion": "any",
-      "AssemblyVersion": "1.0.0.0",
-      "TestingAssemblyVersion": "1.0.0.0",
-      "DownloadCount": 0,
-      "LastUpdate": 0,
-      "LoadPriority": 0,
-      "InternalName": "ResetCamera",
-      "RepoUrl": "https://github.com/Vueren/ResetCamera",
-      "DownloadLinkInstall": "https://github.com/Vueren/ResetCamera/blob/main/latest.zip",
-      "DownloadLinkUpdate": "https://github.com/Vueren/ResetCamera/blob/main/latest.zip",
-      "DownloadLinkTesting": "https://github.com/Vueren/ResetCamera/blob/main/latest.zip",
-      "DalamudApiLevel": "9",
-      "IconUrl": "https://github.com/Vueren/ResetCamera/blob/88c2a69b76b274ab2d0a783a7d0761822dd52799/Data/worldcamera.png"
+        "Author": "Vueren Kuraenir",
+        "Name": "Reset Camera",
+        "InternalName": "ResetCamera",
+        "Punchline": "Reset the camera position relative to the world!",
+        "Description": "This plugin will reset the Camera to a saved position relative to the world, and NOT relative to the character. /rcsave /rcreset",
+        "Changelog": "",
+        "IsHide": "False",
+		"IsTestingExclusive": "False",
+        "ApplicableVersion": "any",
+        "AssemblyVersion": "1.0.0.0",
+        "TestingAssemblyVersion": "1.0.0.0",
+        "DownloadCount": 0,
+        "LastUpdate": 0,
+		"LoadPriority": 0,
+        "RepoUrl": "https://github.com/Vueren/ResetCamera",
+        "DownloadLinkInstall": "https://github.com/Vueren/ResetCamera/blob/main/latest.zip",
+        "DownloadLinkUpdate": "https://github.com/Vueren/ResetCamera/blob/main/latest.zip",
+        "DownloadLinkTesting": "https://github.com/Vueren/ResetCamera/blob/main/latest.zip",
+        "DalamudApiLevel": "9",
+        "IconUrl": "https://github.com/Vueren/ResetCamera/blob/88c2a69b76b274ab2d0a783a7d0761822dd52799/Data/worldcamera.png"
     }
-  ]
+]
