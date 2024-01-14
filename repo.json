@@ -15,10 +15,10 @@
         "LastUpdate": 0,
 		"LoadPriority": 0,
         "RepoUrl": "https://github.com/Vueren/ResetCamera",
-        "DownloadLinkInstall": "https://github.com/Vueren/ResetCamera/blob/main/latest.zip",
-        "DownloadLinkUpdate": "https://github.com/Vueren/ResetCamera/blob/main/latest.zip",
-        "DownloadLinkTesting": "https://github.com/Vueren/ResetCamera/blob/main/latest.zip",
+        "DownloadLinkInstall": "https://github.com/Vueren/ResetCamera/blob/main/latest.zip?raw=true",
+        "DownloadLinkUpdate": "https://github.com/Vueren/ResetCamera/blob/main/latest.zip?raw=true",
+        "DownloadLinkTesting": "https://github.com/Vueren/ResetCamera/blob/main/latest.zip?raw=true",
         "DalamudApiLevel": "9",
-        "IconUrl": "https://github.com/Vueren/ResetCamera/blob/88c2a69b76b274ab2d0a783a7d0761822dd52799/Data/worldcamera.png"
+        "IconUrl": "https://raw.githubusercontent.com/Vueren/ResetCamera/9415a3d532c2b36419445a5148c45e6477209702/Data/worldcamera.png"
     }
 ]
