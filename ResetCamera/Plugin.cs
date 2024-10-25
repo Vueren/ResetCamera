@@ -1,8 +1,8 @@
 using System;
+using Dalamud.Game;
 using Dalamud.Game.Command;
 using Dalamud.IoC;
 using Dalamud.Plugin;
-using System.IO;
 using Dalamud.Plugin.Services;
 using ResetCamera.Structures;
 
@@ -15,10 +15,12 @@ namespace ResetCamera
 
         private const string ResetCommandName = "/rcreset";
 
-        private DalamudPluginInterface PluginInterface { get; init; }
+        [PluginService] internal static IDalamudPluginInterface PluginInterface { get; private set; } = null!;
 
-        private ICommandManager CommandManager { get; init; }
-        
+        [PluginService] internal static ICommandManager CommandManager { get; private set; } = null!;
+        [PluginService] public static ISigScanner SigScanner { get; private set; } = null!;
+        [PluginService] public static IPluginLog PluginLog { get; private set; } = null!;
+
         public Configuration Configuration { get; init; }
 
         private CameraManager* cameraManager { get; init; }
@@ -26,42 +28,35 @@ namespace ResetCamera
         [NonSerialized]
         private static GameCamera* Camera;
 
-        public Plugin(
-            [RequiredVersion("1.0")] DalamudPluginInterface pluginInterface,
-            [RequiredVersion("1.0")] ICommandManager commandManager)
+        public Plugin()
         {
-            pluginInterface.Create<Service>();
-
-            this.cameraManager = (CameraManager*)Service.SigScanner.GetStaticAddressFromSig("4C 8D 35 ?? ?? ?? ?? 85 D2"); // g_ControlSystemCameraManager
+            this.cameraManager = (CameraManager*)FFXIVClientStructs.FFXIV.Client.Game.Control.CameraManager.Instance();
             Camera = cameraManager->WorldCamera;
 
-            this.PluginInterface = pluginInterface;
-            this.CommandManager = commandManager;
+            this.Configuration = PluginInterface.GetPluginConfig() as Configuration ?? new Configuration();
+            this.Configuration.Initialize(PluginInterface);
 
-            this.Configuration = this.PluginInterface.GetPluginConfig() as Configuration ?? new Configuration();
-            this.Configuration.Initialize(this.PluginInterface);
-
-            this.CommandManager.AddHandler(SaveCommandName, new CommandInfo(SaveOnCommand)
+            CommandManager.AddHandler(SaveCommandName, new CommandInfo(SaveOnCommand)
             {
                 HelpMessage = "Saves the current camera position for resetting."
             });
 
-            this.CommandManager.AddHandler(ResetCommandName, new CommandInfo(ResetOnCommand)
+            CommandManager.AddHandler(ResetCommandName, new CommandInfo(ResetOnCommand)
             {
                 HelpMessage = "Resets the camera position to the saved position."
             });
         }
 
         public void Dispose()
-        {            
-            this.CommandManager.RemoveHandler(SaveCommandName);
-            this.CommandManager.RemoveHandler(ResetCommandName);
+        {
+            CommandManager.RemoveHandler(SaveCommandName);
+            CommandManager.RemoveHandler(ResetCommandName);
         }
 
         private void SaveOnCommand(string command, string args)
         {
             // Save the camera's current position
-            Service.PluginLog.Info("Saving...");
+            PluginLog.Info("Saving...");
 
             Configuration.Distance = (Camera->Mode == 0) ? 0f : Camera->Distance;
             Configuration.HRotation = Camera->HRotation;
@@ -72,13 +67,13 @@ namespace ResetCamera
             Configuration.Tilt = Camera->Tilt;
             Configuration.Roll = Camera->Roll;
             Configuration.Save();
-            Service.PluginLog.Info("Saved configuration!");
+            PluginLog.Info("Saved configuration!");
         }
 
         private void ResetOnCommand(string command, string args)
         {
             // Reset the camera to the saved position
-            Service.PluginLog.Info("Resetting...");
+            PluginLog.Info("Resetting...");
 
             Camera->Mode = (Configuration.Distance == 0) ? 0 : 1;
             Camera->Distance = (Configuration.Distance == 0) ? 1.5f : Configuration.Distance;
@@ -89,7 +84,7 @@ namespace ResetCamera
             Camera->Pan = Configuration.Pan;
             Camera->Tilt = Configuration.Tilt;
             Camera->Roll = Configuration.Roll;
-            Service.PluginLog.Info("Position is reset!");
+            PluginLog.Info("Position is reset!");
         }
     }
 }
