@@ -33,6 +33,7 @@ Thanks for using this plugin! It's my very first one for FF14.
 
 - **1.0.0.3**
   - Update to API 12 for 7.2
+  - (Also finally fixed the icon image)
 
 - **1.0.0.2**
   - Update to API 11 for 7.1
