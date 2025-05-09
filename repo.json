@@ -4,7 +4,7 @@
         "Name": "Reset Camera",
         "InternalName": "ResetCamera",
         "Punchline": "Reset the camera position relative to the world!",
-        "Description": "This plugin will reset the Camera to a saved position relative to the world, and NOT relative to the character. /rcsave /rcreset",
+        "Description": "This plugin will reset the Camera to a saved position relative to the world, and NOT relative to the character.",
         "Changelog": "",
         "IsHide": "False",
         "IsTestingExclusive": "False",
