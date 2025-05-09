@@ -30,7 +30,7 @@ All directions saved with /rcsave NAME can be edited in the config window.
 
 For Some Examples:
 
-![Example Configuration](Data\ConfigExamples.png "Example Configuration")
+![Example Configuration](https://raw.githubusercontent.com/Vueren/ResetCamera/main/Data/ConfigExamples.png "Example Configuration")
 
 HRotation Degrees can go from 0 to 360 counterclockwise from True North.
 - This is the cardinal direction (e.g. North).
