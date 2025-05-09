@@ -12,14 +12,28 @@ Add `https://raw.githubusercontent.com/Vueren/ResetCamera/main/repo.json` to you
 
 ### Saving the Camera Position
 
-Type /rcsave to save the current camera position for resetting. I'd advise a setting looking at True North, top/down.
+Type /rcsave to save the current camera position for resetting.
 
-You can refine these values in the ResetCamera.json file in the AddonSettings folder.
+### Tweaking the Camera Position
 
-For True North looking *almost* top-down:
+Type /rcconfig to further tweak the camera position data.
+
+I'd advise a setting looking at True North.
+
+HRotation Degrees can go from 0 to 360.
+This is the cardinal direction (e.g. North).
+0 and 360 points North and 180 points South. 90 points West and 270 points East.
+
+VRotation can go from 0.79 to -1.49.
+This is the vertical direction.
+-1.49 points top/down and 0 points horizontally.
+
+For True North looking 45 degrees downward:
 - "Distance": 20.0,
-- "HRotation": 0.0,
+- "HRotation Degrees": 0.0,
 - "VRotation": -0.75,
+
+"Roll Degrees" is included as a joke. Feel free to have fun with it.
 
 ### Resetting the Camera Position
 
@@ -30,6 +44,15 @@ Type /rcreset to reset the camera position to the saved position. This may be us
 Thanks for using this plugin! It's my very first one for FF14.
 
 ## Change Log
+
+- **1.0.1.0**
+  - Added a Config window! Open with /rcconfig
+  - The following options will NOT have a Config UI, but will remain behind-the-scenes for the sake of backwards compatibility:
+    - ZoomFoV
+    - GposeFoV
+    - Pan (seemingly does nothing)
+    - Tilt (seemingly does nothing)
+  - Updated this README's tutorial section
 
 - **1.0.0.3**
   - Update to API 12 for 7.2

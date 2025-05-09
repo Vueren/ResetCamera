@@ -1,7 +1,6 @@
 using Dalamud.Configuration;
 using Dalamud.Plugin;
 using System;
-using System.Numerics;
 
 namespace ResetCamera
 {
@@ -10,16 +9,18 @@ namespace ResetCamera
     {
         public int Version { get; set; } = 0;
 
-        public float Distance { get; set; }
-        public float HRotation { get; set; }
-        public float VRotation { get; set; }
-        public float ZoomFoV { get; set; }  // Applies when zooming in very closely
-        public float GposeFoV { get; set; } // Can be adjusted in the GPose settings menu
-        public float Pan { get; set; }
-        public float Tilt { get; set; }
-        public float Roll { get; set; }
+        public float Distance;
+        public float HRotation;
+        public float VRotation;
+        public float ZoomFoV;
+        public float GposeFoV;
+        public float Pan;
+        public float Tilt;
+        public float Roll;
 
-        // the below exist just to make saving less cumbersome
+
+
+        // The below exists to make Saving less cumbersome
         [NonSerialized]
         private IDalamudPluginInterface? pluginInterface;
 
@@ -28,9 +29,13 @@ namespace ResetCamera
             this.pluginInterface = pluginInterface;
         }
 
+        public delegate void OnSaveHandler();
+        public event OnSaveHandler? OnSave;
+
         public void Save()
         {
             this.pluginInterface!.SavePluginConfig(this);
+            this.OnSave?.Invoke();
         }
     }
 }

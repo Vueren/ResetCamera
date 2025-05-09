@@ -15,6 +15,8 @@ namespace ResetCamera
 
         private const string ResetCommandName = "/rcreset";
 
+        private const string ConfigCommandName = "/rcconfig";
+
         [PluginService] internal static IDalamudPluginInterface PluginInterface { get; private set; } = null!;
 
         [PluginService] internal static ICommandManager CommandManager { get; private set; } = null!;
@@ -27,6 +29,8 @@ namespace ResetCamera
 
         [NonSerialized]
         private static GameCamera* Camera;
+
+        private PluginUI? ui;
 
         public Plugin()
         {
@@ -45,6 +49,18 @@ namespace ResetCamera
             {
                 HelpMessage = "Resets the camera position to the saved position."
             });
+
+            CommandManager.AddHandler(ConfigCommandName, new CommandInfo(ConfigOnCommand)
+            {
+                HelpMessage = "Opens the configuration window for the Reset Camera addon."
+            });
+
+            ui = new PluginUI(this.Configuration);
+
+            PluginInterface.UiBuilder.Draw += DrawUI;
+            PluginInterface.UiBuilder.OpenConfigUi += ToggleDrawConfigUI;
+
+            PluginLog.Info("Plugin load finished!");
         }
 
         public void Dispose()
@@ -67,6 +83,7 @@ namespace ResetCamera
             Configuration.Tilt = Camera->Tilt;
             Configuration.Roll = Camera->Roll;
             Configuration.Save();
+
             PluginLog.Info("Saved configuration!");
         }
 
@@ -84,7 +101,27 @@ namespace ResetCamera
             Camera->Pan = Configuration.Pan;
             Camera->Tilt = Configuration.Tilt;
             Camera->Roll = Configuration.Roll;
+
             PluginLog.Info("Position is reset!");
+        }
+
+        private void DrawUI()
+        {
+            ui?.Draw();
+        }
+
+        private void ToggleDrawConfigUI()
+        {
+            if (ui == null) return;
+
+            ui.SettingsVisible = !ui.SettingsVisible;
+
+            PluginLog.Info("UI window toggled!");
+        }
+
+        private void ConfigOnCommand(string command, string args)
+        {
+            ToggleDrawConfigUI();
         }
     }
 }
