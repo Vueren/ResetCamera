@@ -28,3 +28,18 @@ Type /rcreset to reset the camera position to the saved position. This may be us
 ## Enjoy!
 
 Thanks for using this plugin! It's my very first one for FF14.
+
+## Change Log
+
+- **1.0.0.3**
+  - Update to API 12 for 7.2
+
+- **1.0.0.2**
+  - Update to API 11 for 7.1
+
+- **1.0.0.1**
+  - Update to API 10 for 7.0
+  - Use FFXIVClientStructs camera instead of a static address 
+
+- **1.0.0.0**
+  - Initial Release
