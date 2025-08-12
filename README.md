@@ -68,6 +68,13 @@ Thanks for using this plugin! It's my very first one for FF14.
 
 ## Change Log
 
+- **1.0.2.1**
+  - Updated for Patch 7.3
+  - Completely removed Pan and Tilt
+    - Past-me said that I originally kept it for backwards compatibility
+    - Worked fine for me in Dev, so clearly past-me was a liar and should be ashamed
+
+
 - **1.0.2.0**
   - Added the ability to save and reset to multiple directions at once
     - The default /rcsave and /rcreset retain their functionality thanks to the default unnamed saved direction

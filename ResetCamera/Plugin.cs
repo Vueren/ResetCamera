@@ -92,8 +92,6 @@ namespace ResetCamera
                 Configuration.VRotation = Camera->VRotation;
                 Configuration.ZoomFoV = Camera->FoV;
                 Configuration.GposeFoV = Camera->AddedFoV;
-                Configuration.Pan = Camera->Pan;
-                Configuration.Tilt = Camera->Tilt;
                 Configuration.Roll = Camera->Roll;
 
                 PluginLog.Info("Saved over the default unnamed saved direction!");
@@ -108,8 +106,6 @@ namespace ResetCamera
                 savedCameraInfo.VRotation = Camera->VRotation;
                 savedCameraInfo.ZoomFoV = Camera->FoV;
                 savedCameraInfo.GposeFoV = Camera->AddedFoV;
-                savedCameraInfo.Pan = Camera->Pan;
-                savedCameraInfo.Tilt = Camera->Tilt;
                 savedCameraInfo.Roll = Camera->Roll;
 
                 // If it already exists, set it. Otherwise, create it.
@@ -143,8 +139,6 @@ namespace ResetCamera
                 Camera->VRotation = Configuration.VRotation;
                 Camera->FoV = Configuration.ZoomFoV;
                 Camera->AddedFoV = Configuration.GposeFoV;
-                Camera->Pan = Configuration.Pan;
-                Camera->Tilt = Configuration.Tilt;
                 Camera->Roll = Configuration.Roll;
 
                 PluginLog.Info("Direction has been reset back to the default unnamed saved direction!");
@@ -161,8 +155,6 @@ namespace ResetCamera
                     Camera->VRotation = savedCameraInfo.VRotation;
                     Camera->FoV = savedCameraInfo.ZoomFoV;
                     Camera->AddedFoV = savedCameraInfo.GposeFoV;
-                    Camera->Pan = savedCameraInfo.Pan;
-                    Camera->Tilt = savedCameraInfo.Tilt;
                     Camera->Roll = savedCameraInfo.Roll;
                 }
 
@@ -184,8 +176,6 @@ namespace ResetCamera
                 Configuration.VRotation = -0.34906587f;
                 Configuration.ZoomFoV = 0.78f;
                 Configuration.GposeFoV = 0;
-                Configuration.Pan = 0;
-                Configuration.Tilt = 0;
                 Configuration.Roll = 0;
 
                 PluginLog.Info("Any changes made to the default unnamed saved direction have been deleted!");

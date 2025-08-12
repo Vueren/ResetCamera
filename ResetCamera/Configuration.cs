@@ -18,8 +18,6 @@ namespace ResetCamera
         public float VRotation = -0.34906587f;
         public float ZoomFoV = 0.78f;
         public float GposeFoV = 0;
-        public float Pan = 0;
-        public float Tilt = 0;
         public float Roll = 0;
 
         [Serializable]
@@ -30,8 +28,6 @@ namespace ResetCamera
             public float VRotation;
             public float ZoomFoV;
             public float GposeFoV;
-            public float Pan;
-            public float Tilt;
             public float Roll;
         }
 
