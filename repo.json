@@ -18,7 +18,7 @@
         "DownloadLinkInstall": "https://github.com/Vueren/ResetCamera/blob/main/latest.zip?raw=true",
         "DownloadLinkUpdate": "https://github.com/Vueren/ResetCamera/blob/main/latest.zip?raw=true",
         "DownloadLinkTesting": "https://github.com/Vueren/ResetCamera/blob/main/latest.zip?raw=true",
-        "DalamudApiLevel": "12",
+        "DalamudApiLevel": "13",
         "IconUrl": "https://raw.githubusercontent.com/Vueren/ResetCamera/main/Data/icon.png"
     }
 ]
