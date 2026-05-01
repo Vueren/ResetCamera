@@ -68,6 +68,9 @@ Thanks for using this plugin! It's my very first one for FF14.
 
 ## Change Log
 
+- **1.0.2.3**
+  - Updated for Patch 7.5 and therefore also Dalamud API 15
+
 - **1.0.2.2**
   - Updated for Patch 7.4 and therefore also Dalamud API 14
     - My apologies for the delay

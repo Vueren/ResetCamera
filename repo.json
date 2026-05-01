@@ -9,8 +9,8 @@
         "IsHide": "False",
         "IsTestingExclusive": "False",
         "ApplicableVersion": "any",
-        "AssemblyVersion": "1.0.2.2",
-        "TestingAssemblyVersion": "1.0.2.2",
+        "AssemblyVersion": "1.0.2.3",
+        "TestingAssemblyVersion": "1.0.2.3",
         "DownloadCount": 0,
         "LastUpdate": 0,
         "LoadPriority": 0,
@@ -18,7 +18,7 @@
         "DownloadLinkInstall": "https://github.com/Vueren/ResetCamera/blob/main/latest.zip?raw=true",
         "DownloadLinkUpdate": "https://github.com/Vueren/ResetCamera/blob/main/latest.zip?raw=true",
         "DownloadLinkTesting": "https://github.com/Vueren/ResetCamera/blob/main/latest.zip?raw=true",
-        "DalamudApiLevel": "14",
+        "DalamudApiLevel": "15",
         "IconUrl": "https://raw.githubusercontent.com/Vueren/ResetCamera/main/Data/icon.png"
     }
 ]
